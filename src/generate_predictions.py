@@ -27,8 +27,6 @@ def generate():
     y = label_encoder.fit_transform(labeled["category"])
 
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-
-    # Honest out-of-fold predictions, keyed by transaction_id
     oof_predictions = pd.DataFrame({"transaction_id": labeled["transaction_id"]})
 
     for name, model in get_models().items():
@@ -47,14 +45,9 @@ def generate():
         split = [split_category(c) for c in y_pred_category]
         oof_predictions[f"predicted_primary_category_{safe_name}"] = [s[0] for s in split]
         oof_predictions[f"predicted_detailed_category_{safe_name}"] = [s[1] for s in split]
-
-    # Build the deliverable starting from the REAL unlabeled file
     unlabeled = pd.read_csv(UNLABELED_PATH)
     out = unlabeled[["transaction_id", "date", "description", "amount", "type"]].copy()
     out = out.merge(oof_predictions, on="transaction_id", how="left")
-
-    # Attach ground truth (from the labeled file) so match_<model> can be
-    # computed -- this is for YOUR verification, not something the model saw.
     truth = labeled[["transaction_id", "merchant", "category"]].rename(
         columns={"merchant": "actual_merchant", "category": "actual_category"}
     )
