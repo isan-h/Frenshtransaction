@@ -1,28 +1,3 @@
-"""
-test_on_holdout.py
--------------------
-Explicit, standalone test of the CURRENTLY SAVED models (models/*.joblib
--- the ones trained on 80% of the data by train.py) against the 20%
-they were NEVER trained on.
-
-This does NOT retrain anything. It:
-  1. Recreates the exact same 80/20 split train.py used (same
-     random_state=42 -> same split, reproducibly)
-  2. Loads the ALREADY-SAVED models and feature pipeline from models/
-  3. Runs them ONLY on the 20% test portion
-  4. Reports accuracy/precision/recall/F1 per model to
-     reports/holdout_test_report.md
-
-IMPORTANT: this only reproduces the SAME 20% as long as
-cleaned_transactions.csv hasn't changed size since the models were
-last trained (e.g. via incorporate_feedback.py adding rows). If you've
-added feedback and retrained since, rerun evaluate.py instead -- it
-always uses the CURRENT data's split, this script assumes the split
-underlying models/*.joblib right now.
-
-Run with:  python src/test_on_holdout.py
-"""
-
 import joblib
 import pandas as pd
 from pathlib import Path

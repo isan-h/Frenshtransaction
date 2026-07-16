@@ -1,15 +1,3 @@
-"""
-app.py
-------
-Test the trained models on a NEW description you type in yourself --
-text only, no other input -- compare what all models predict, and log
-corrections for later retraining.
-
-Run with:
-    pip install streamlit
-    python -m streamlit run app.py
-"""
-
 import sys
 from pathlib import Path
 

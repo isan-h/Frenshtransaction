@@ -1,30 +1,3 @@
-"""
-preprocessing.py
------------------
-Cleaning for the REAL Effyis French transaction data.
-
-IMPORTANT DIFFERENCE from the mock-data project: there, the "PAYMENT"
-prefix was uninformative noise (appeared at the same rate across every
-category) and was stripped like a stopword. Here, EDA showed the
-opposite: prefix words are highly informative.
-
-  - RETRAIT            -> ALWAYS "Cash"        (100% of 74 rows)
-  - FRAIS/COMMISSION/
-    AGIOS/COTISATION    -> ALWAYS "Fees"        (100% of 40 rows)
-  - VIR                 -> ONLY "Transfers" or "Income" (never anything else)
-  - PRLV                -> ONLY "Utilities"/"Subscriptions"/"Insurance"
-  - CB / PAIEMENT / CARTE -> spread evenly across the 6 merchant-driven
-                             categories (Shopping, Restaurants, Transport,
-                             Groceries, Entertainment, Health) -- these
-                             three ARE uninformative for distinguishing
-                             among those 6, but still informative for
-                             separating "this is a card purchase" from
-                             the bank-operation categories above.
-
-So: DO NOT strip these prefixes. Only remove things that are genuinely
-noise -- punctuation/separators and numeric reference codes.
-"""
-
 import re
 import pandas as pd
 

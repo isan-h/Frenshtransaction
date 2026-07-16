@@ -1,11 +1,3 @@
-"""
-predict.py
-----------
-Given ONE description (text only, no other input), predict the full
-category field, then split it into primary_category and
-detailed_category.
-"""
-
 import joblib
 import pandas as pd
 from pathlib import Path

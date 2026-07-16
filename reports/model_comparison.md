@@ -12,7 +12,7 @@
 | LightGBM                |     0.5045 |              0.5237 |           0.5045 |       0.5007 |          14.028  |             0.0667 |
 | Majority Class Baseline |     0.027  |              0.0007 |           0.027  |       0.0014 |           0.0012 |             0.0006 |
 
-## Best model: Logistic Regression
+## Best model: L ogistic Regression
 
 ### Confusion Matrix
 
