@@ -26,9 +26,6 @@ AVAILABLE_MODELS = {
 def run_test():
     df = pd.read_csv(DATA_PATH)
     df[TEXT_COL] = df[TEXT_COL].fillna("")
-
-    # EXACT same split call as train.py's load_features() -- same
-    # random_state, same test_size, same stratify column -> same 20%.
     y_raw = df["category"]
     X_train_raw, X_test_raw, y_train_raw, y_test_raw = train_test_split(
         df, y_raw, test_size=0.2, random_state=42, stratify=y_raw
@@ -69,8 +66,6 @@ def run_test():
 
     table = pd.DataFrame(rows).sort_values("F1 (macro)", ascending=False).reset_index(drop=True)
     lines.append(table.round(4).to_markdown(index=False))
-
-    # Confusion matrix + classification report for the best model
     best_label = table.iloc[0]["Model"]
     best_model = joblib.load(MODELS_DIR / f"{AVAILABLE_MODELS[best_label]}.joblib")
     y_pred_best = best_model.predict(X_test)
