@@ -3,13 +3,12 @@ from pathlib import Path
 from sklearn.model_selection import StratifiedKFold, cross_val_predict
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder
-
 from feature_engineering import build_feature_pipeline, TEXT_COL
 from preprocessing import clean_text
 from models import get_models
 
 LABELED_PATH = Path("data/raw/transactions_fr_balanced.csv")
-UNLABELED_PATH = Path("data\\raw\\transactions_fr_balanced - Copie.csv")
+UNLABELED_PATH = Path("data/raw/transactions_fr_balanced - Copie.csv")
 OUT_PATH = Path("data/processed/predictions_comparison.csv")
 
 

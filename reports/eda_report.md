@@ -1,4 +1,4 @@
-# EDA Report Effyis Dataset
+# EDA Report -- Balanced Effyis Dataset
 
 Source: `transactions_fr_balanced - Copie.csv`
 
