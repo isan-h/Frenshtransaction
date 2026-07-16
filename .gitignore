@@ -7,8 +7,6 @@ venv/
 .env/
 .venv/
 models/*.joblib
-reports/*.md
-reports/figures/*.png
 .vscode/
 .idea/
 *.swp
