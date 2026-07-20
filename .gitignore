@@ -14,3 +14,4 @@ models/*.joblib
 .DS_Store
 Thumbs.db
 data/*
+noybook.ipynb/*
