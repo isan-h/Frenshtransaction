@@ -5,20 +5,23 @@ import pandas as pd
 import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).parent / "src"))
-from predict import predict_category, list_available_models, get_categories  # noqa: E402
+from predict import predict_transaction, list_available_models, get_categories  # noqa: E402
 from feedback import save_correction, pending_count  # noqa: E402
 
-st.set_page_config(page_title="Effyis Category Classifier", page_icon="\U0001F3F7\uFE0F")
+st.set_page_config(page_title="Effyis Category + Merchant Classifier", page_icon="\U0001F3F7\uFE0F")
 
-st.title("\U0001F3F7\uFE0F Effyis Category Classifier")
-st.caption("Type a transaction description (only) and compare what each model predicts.")
+st.title("\U0001F3F7\uFE0F Effyis Category + Merchant Classifier")
+st.caption(
+    "Type a transaction description (only) and compare what each model predicts -- "
+    "category AND merchant, both trained together from the same text."
+)
 
 available = list_available_models()
 if not available:
     st.error("No trained models found in models/. Run `python src/evaluate.py` first.")
     st.stop()
 
-description = st.text_input("Description", "CB LIDL 4658 CERGY")
+description = st.text_input("Description", "CB ZODIO 7615 REIMS")
 feedback_model_label = st.selectbox(
     "Model to give feedback on", list(available.keys()), index=0,
     help="All models below get predicted either way -- this just picks which one your correction applies to.",
@@ -27,13 +30,21 @@ feedback_model_label = st.selectbox(
 if st.button("Predict with ALL models", type="primary"):
     rows = []
     for label, model_key in available.items():
-        full, primary, detailed, confidence, all_probs = predict_category(description, model_key)
+        result = predict_transaction(description, model_key)
         rows.append({
             "Model": label,
-            "Predicted category": full,
-            "Primary": primary,
-            "Detailed": detailed,
-            "Confidence": f"{confidence*100:.1f}%" if confidence is not None else "n/a",
+            "Predicted category": result["full_category"],
+            "Primary": result["primary_category"],
+            "Detailed": result["detailed_category"],
+            "Category confidence": (
+                f"{result['category_confidence']*100:.1f}%"
+                if result["category_confidence"] is not None else "n/a"
+            ),
+            "Predicted merchant": result["merchant"],
+            "Merchant confidence": (
+                f"{result['merchant_confidence']*100:.1f}%"
+                if result["merchant_confidence"] is not None else "n/a"
+            ),
         })
 
     st.session_state["last_predictions"] = rows
@@ -90,7 +101,8 @@ if rows:
 
 st.divider()
 st.caption(
-    "For the full model-by-model accuracy comparison across all 2,220 "
-    "transactions, see data/processed/predictions_comparison.csv -- built "
-    "from the real unlabeled file, with honest (cross_val_predict) match rates."
+    "For the full model-by-model accuracy comparison (category AND merchant) "
+    "across all 2,220 transactions, see data/processed/predictions_comparison.csv -- "
+    "built from the real unlabeled file, with honest (cross_val_predict) match rates. "
+    "For the full report see reports/model_comparison.md."
 )

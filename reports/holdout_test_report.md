@@ -1,19 +1,36 @@
 # Holdout Test Report
 
-Standalone test of the SAVED models (models/*.joblib) on the 444-row (20%) split they were never trained on.
+## Executive summary
 
-## Results
+| Target   |   # Classes | Best model          |   Accuracy |   F1 (macro) |   F1 (weighted) |
+|:---------|------------:|:--------------------|-----------:|-------------:|----------------:|
+| Category |          37 | Logistic Regression |     0.9752 |       0.9741 |          0.9741 |
+| Merchant |         292 | Random Forest       |     0.9662 |       0.9498 |          0.9662 |
 
-| Model               |   Accuracy |   Precision (macro) |   Recall (macro) |   F1 (macro) |
-|:--------------------|-----------:|--------------------:|-----------------:|-------------:|
-| Logistic Regression |     0.9752 |              0.9764 |           0.9752 |       0.9741 |
-| Linear SVM          |     0.973  |              0.9772 |           0.973  |       0.9727 |
-| Random Forest       |     0.9527 |              0.9589 |           0.9527 |       0.9534 |
-| Naive Bayes         |     0.9437 |              0.95   |           0.9437 |       0.9413 |
-| XGBoost             |     0.9167 |              0.9323 |           0.9167 |       0.9197 |
-| LightGBM            |     0.5045 |              0.5237 |           0.5045 |       0.5007 |
+Standalone test of the SAVED models (models/*.joblib) on the 444-row (20%) split they were never trained on -- for both the category model and the merchant model.
 
-## Best on holdout: Logistic Regression
+## Category results (37 classes)
+
+| Model               |   Accuracy |   Precision (macro) |   Recall (macro) |   F1 (macro) |   F1 (weighted) |
+|:--------------------|-----------:|--------------------:|-----------------:|-------------:|----------------:|
+| Logistic Regression |     0.9752 |              0.9764 |           0.9752 |       0.9741 |          0.9741 |
+| Linear SVM          |     0.973  |              0.9772 |           0.973  |       0.9727 |          0.9727 |
+| Random Forest       |     0.9527 |              0.9589 |           0.9527 |       0.9534 |          0.9534 |
+| Naive Bayes         |     0.9437 |              0.95   |           0.9437 |       0.9413 |          0.9413 |
+| XGBoost             |     0.9167 |              0.9323 |           0.9167 |       0.9197 |          0.9197 |
+| LightGBM            |     0.5045 |              0.5237 |           0.5045 |       0.5007 |          0.5007 |
+
+## Merchant results (292 classes)
+
+| Model               |   Accuracy |   Precision (macro) |   Recall (macro) |   F1 (macro) |   F1 (weighted) |
+|:--------------------|-----------:|--------------------:|-----------------:|-------------:|----------------:|
+| Random Forest       |     0.9662 |              0.9498 |           0.9498 |       0.9498 |          0.9662 |
+| Linear SVM          |     0.9662 |              0.9484 |           0.9521 |       0.9482 |          0.964  |
+| Logistic Regression |     0.9459 |              0.9475 |           0.9352 |       0.9393 |          0.9529 |
+| Naive Bayes         |     0.759  |              0.6679 |           0.7044 |       0.6714 |          0.7289 |
+| LightGBM            |     0.4595 |              0.357  |           0.3884 |       0.3566 |          0.4414 |
+
+## Category detail -- best on holdout: Logistic Regression
 
 ### Confusion Matrix
 ```
@@ -56,7 +73,8 @@ Transportation / Public Transport                                               
 Transportation / Taxis and ride shares                                                          0                                          0                                 0                      0                      0                              0                            0                              0                         0                             0                         0                           0                               0                                  0                                0                                          0                            0                                     0                                 0                                    0                                    0                                             0                         0                                   0                                                                0               0                                     0                            0                                0                        0                         0                                                 0                     0                         0                                  0                                      12                       0
 Transportation / Tolls                                                                          0                                          0                                 0                      0                      0                              0                            0                              0                         0                             0                         0                           0                               0                                  0                                0                                          0                            0                                     0                                 0                                    0                                    0                                             0                         0                                   0                                                                0               0                                     0                            0                                0                        0                         0                                                 0                     0                         0                                  0                                       0                      12
 ```
-### Per-Category Report
+
+### Per-Class Report
 ```
                                                                  precision    recall  f1-score   support
 
@@ -103,3 +121,27 @@ General Services / Other non-entertainment online subscriptions       1.00      
                                                    weighted avg       0.98      0.98      0.97       444
 
 ```
+
+## Merchant detail -- best on holdout: Random Forest
+
+208/216 merchants seen in this holdout set were predicted with perfect F1 (1.00).
+
+### 15 hardest merchants on this holdout
+
+| Class         |   Support (test) |   Precision |   Recall |   F1 |
+|:--------------|-----------------:|------------:|---------:|-----:|
+| Aldi          |                3 |           0 |        0 |    0 |
+| Buffalo Grill |                1 |           0 |        0 |    0 |
+| But           |                2 |           0 |        0 |    0 |
+| Cora          |                2 |           0 |        0 |    0 |
+| Ikea          |                2 |           0 |        0 |    0 |
+| Maif          |                3 |           0 |        0 |    0 |
+| H&M           |                1 |           0 |        0 |    0 |
+| Picard        |                1 |           0 |        0 |    0 |
+| Amazon        |                2 |           1 |        1 |    1 |
+| Apple Icloud  |                1 |           1 |        1 |    1 |
+| Apple Music   |                2 |           1 |        1 |    1 |
+| Apple Store   |                3 |           1 |        1 |    1 |
+| Apple Tv+     |                2 |           1 |        1 |    1 |
+| Alan          |                3 |           1 |        1 |    1 |
+| Agios         |                2 |           1 |        1 |    1 |

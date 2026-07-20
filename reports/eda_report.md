@@ -1,4 +1,4 @@
-# EDA Report Effyis Dataset
+# EDA Report -- Balanced Effyis Dataset
 
 Source: `transactions_fr_balanced - Copie.csv`
 
@@ -47,7 +47,7 @@ Income                  60
 Series([], )
 ```
 
-![detailed category distribution](figures/detailed_category_distribution.png)
+![detailed category distribution]()
 
 33 of 34 categories have exactly 60 examples each -- genuinely balanced (unlike the earlier 6.8x-imbalanced dataset). Only "Other" is larger (240), as a catch-all bucket.
 

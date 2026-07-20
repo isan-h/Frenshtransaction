@@ -1,3 +1,10 @@
+"""
+label_generator.py
+------------------
+Phase 4: Build a dictionary mapping known merchants to categories.
+This creates the initial labeled dataset from unlabeled transactions.
+"""
+
 import pandas as pd
 
 # Comprehensive merchant-to-category mapping for French transactions

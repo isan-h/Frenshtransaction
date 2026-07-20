@@ -1,18 +1,40 @@
 # Model Comparison Report
 
-## Comparison Table
+This report covers **two models trained together in the same run**, from the same cleaned `description` text and the same train/test split (80/20, stratified on category): predicting the transaction's **category** and predicting the **merchant**. Only the label column differs between the two -- everything else (features, split, candidate models) is shared.
 
-| Model                   |   Accuracy |   Precision (macro) |   Recall (macro) |   F1 (macro) |   Train time (s) |   Predict time (s) |
-|:------------------------|-----------:|--------------------:|-----------------:|-------------:|-----------------:|-------------------:|
-| Logistic Regression     |     0.9752 |              0.9764 |           0.9752 |       0.9741 |           0.2902 |             0.0011 |
-| Linear SVM              |     0.973  |              0.9772 |           0.973  |       0.9727 |           0.3038 |             0.001  |
-| Random Forest           |     0.9527 |              0.9589 |           0.9527 |       0.9534 |           1.0538 |             0.1539 |
-| Naive Bayes             |     0.9437 |              0.95   |           0.9437 |       0.9413 |           0.0051 |             0.0006 |
-| XGBoost                 |     0.9167 |              0.9323 |           0.9167 |       0.9197 |           8.8071 |             0.027  |
-| LightGBM                |     0.5045 |              0.5237 |           0.5045 |       0.5007 |          14.028  |             0.0667 |
-| Majority Class Baseline |     0.027  |              0.0007 |           0.027  |       0.0014 |           0.0012 |             0.0006 |
+## Executive summary
 
-## Best model: L ogistic Regression
+| Target   |   # Classes | Best model          |   Accuracy |   F1 (macro) |   F1 (weighted) |
+|:---------|------------:|:--------------------|-----------:|-------------:|----------------:|
+| Category |          37 | Logistic Regression |     0.9752 |       0.9741 |          0.9741 |
+| Merchant |         292 | Random Forest       |     0.9662 |       0.9498 |          0.9662 |
+
+> Note: XGBoost skipped on **Merchant** -- requires every class to appear in the training split, and a few rare merchants (as few as 1 example total) landed in the test split only. Not a bug: an honestly reported limitation of the small-sample classes, not the modeling approach.
+
+## Category model comparison (37 classes)
+
+| Model                   |   Accuracy |   Precision (macro) |   Recall (macro) |   F1 (macro) |   F1 (weighted) |   Train time (s) |   Predict time (s) |
+|:------------------------|-----------:|--------------------:|-----------------:|-------------:|----------------:|-----------------:|-------------------:|
+| Logistic Regression     |     0.9752 |              0.9764 |           0.9752 |       0.9741 |          0.9741 |           0.1669 |             0.0007 |
+| Linear SVM              |     0.973  |              0.9772 |           0.973  |       0.9727 |          0.9727 |           0.1764 |             0.0009 |
+| Random Forest           |     0.9527 |              0.9589 |           0.9527 |       0.9534 |          0.9534 |           0.9863 |             0.1002 |
+| Naive Bayes             |     0.9437 |              0.95   |           0.9437 |       0.9413 |          0.9413 |           0.0035 |             0.0004 |
+| XGBoost                 |     0.9167 |              0.9323 |           0.9167 |       0.9197 |          0.9197 |           7.3839 |             0.0325 |
+| LightGBM                |     0.5045 |              0.5237 |           0.5045 |       0.5007 |          0.5007 |           6.8155 |             0.1315 |
+| Majority Class Baseline |     0.027  |              0.0007 |           0.027  |       0.0014 |          0.0014 |           0.0008 |             0.0005 |
+
+## Merchant model comparison (292 classes)
+
+| Model                   |   Accuracy |   Precision (macro) |   Recall (macro) |   F1 (macro) |   F1 (weighted) |   Train time (s) |   Predict time (s) |
+|:------------------------|-----------:|--------------------:|-----------------:|-------------:|----------------:|-----------------:|-------------------:|
+| Random Forest           |     0.9662 |              0.9498 |           0.9498 |       0.9498 |          0.9662 |           1.3956 |             0.1579 |
+| Linear SVM              |     0.9662 |              0.9484 |           0.9521 |       0.9482 |          0.964  |           0.8566 |             0.0009 |
+| Logistic Regression     |     0.9459 |              0.9475 |           0.9352 |       0.9393 |          0.9529 |           0.4691 |             0.0016 |
+| Naive Bayes             |     0.759  |              0.6679 |           0.7044 |       0.6714 |          0.7289 |           0.0123 |             0.0021 |
+| LightGBM                |     0.4595 |              0.357  |           0.3884 |       0.3566 |          0.4414 |          23.4184 |             0.6027 |
+| Majority Class Baseline |     0.0068 |              0      |           0.0046 |       0.0001 |          0.0001 |           0.0015 |             0.0002 |
+
+## Category detail -- best model: Logistic Regression
 
 ### Confusion Matrix
 
@@ -57,7 +79,7 @@ Transportation / Taxis and ride shares                                          
 Transportation / Tolls                                                                          0                                          0                                 0                      0                      0                              0                            0                              0                         0                             0                         0                           0                               0                                  0                                0                                          0                            0                                     0                                 0                                    0                                    0                                             0                         0                                   0                                                                0               0                                     0                            0                                0                        0                         0                                                 0                     0                         0                                  0                                       0                      12
 ```
 
-### Per-Category Report
+### Per-Class Report
 
 ```
                                                                  precision    recall  f1-score   support
@@ -105,3 +127,42 @@ General Services / Other non-entertainment online subscriptions       1.00      
                                                    weighted avg       0.98      0.98      0.97       444
 
 ```
+
+## Merchant detail -- best model: Random Forest
+
+Full per-merchant precision/recall/F1 for all 292 classes saved to `reports/merchant_per_class.csv` (too long for this report). Summary: **208/216** merchants seen in the test set were predicted with perfect F1 (1.00).
+
+### 15 hardest merchants (lowest F1 on the test set)
+
+| Class         |   Support (test) |   Precision |   Recall |   F1 |
+|:--------------|-----------------:|------------:|---------:|-----:|
+| Aldi          |                3 |           0 |        0 |    0 |
+| Buffalo Grill |                1 |           0 |        0 |    0 |
+| But           |                2 |           0 |        0 |    0 |
+| Cora          |                2 |           0 |        0 |    0 |
+| Ikea          |                2 |           0 |        0 |    0 |
+| Maif          |                3 |           0 |        0 |    0 |
+| H&M           |                1 |           0 |        0 |    0 |
+| Picard        |                1 |           0 |        0 |    0 |
+| Amazon        |                2 |           1 |        1 |    1 |
+| Apple Icloud  |                1 |           1 |        1 |    1 |
+| Apple Music   |                2 |           1 |        1 |    1 |
+| Apple Store   |                3 |           1 |        1 |    1 |
+| Apple Tv+     |                2 |           1 |        1 |    1 |
+| Alan          |                3 |           1 |        1 |    1 |
+| Agios         |                2 |           1 |        1 |    1 |
+
+### 10 easiest merchants (for reference)
+
+| Class          |   Support (test) |   Precision |   Recall |   F1 |
+|:---------------|-----------------:|------------:|---------:|-----:|
+| Action         |                1 |           1 |        1 |    1 |
+| Adidas Store   |                4 |           1 |        1 |    1 |
+| Agios          |                2 |           1 |        1 |    1 |
+| Agip           |                1 |           1 |        1 |    1 |
+| Alan           |                3 |           1 |        1 |    1 |
+| Aliexpress     |                2 |           1 |        1 |    1 |
+| Alinea         |                2 |           1 |        1 |    1 |
+| Amazon         |                2 |           1 |        1 |    1 |
+| Avocat Consult |                2 |           1 |        1 |    1 |
+| Apple Icloud   |                1 |           1 |        1 |    1 |
