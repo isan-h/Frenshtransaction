@@ -18,12 +18,12 @@ def get_models() -> dict:
         from xgboost import XGBClassifier
         models["XGBoost"] = XGBClassifier(eval_metric="mlogloss", random_state=42)
     except ImportError:
-        print("[models.py] xgboost not installed -- skipping. Install with: pip install xgboost")
+        print("[models.py] xgboost not installed, skipping. Install with: pip install xgboost")
 
     try:
         from lightgbm import LGBMClassifier
         models["LightGBM"] = LGBMClassifier(random_state=42, verbose=-1)
     except ImportError:
-        print("[models.py] lightgbm not installed -- skipping. Install with: pip install lightgbm")
+        print("[models.py] lightgbm not installed, skipping. Install with: pip install lightgbm")
 
     return models

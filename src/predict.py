@@ -1,10 +1,3 @@
-"""
-predict.py
-----------
-Predicts BOTH the category and the merchant for a single new
-description, from the same TF-IDF features -- used live by app.py.
-"""
-
 import joblib
 import pandas as pd
 from pathlib import Path

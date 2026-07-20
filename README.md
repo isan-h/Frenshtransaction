@@ -81,15 +81,15 @@ pip install -r requirements.txt
 
 python src/preprocessing.py         # Phase 2: clean the raw data
 python src/eda.py                   # Phase 1: EDA report + charts
-python src/evaluate.py              # Phase 4-5: train + compare all models, BOTH targets, one report
+python rc/evaluate.py              # Phase 4-5: train + compare all models, BOTH targets, one report
 python src/cross_validate.py        # Phase 5b: 5-fold CV robustness check, both targets
 python src/test_on_holdout.py       # standalone re-check of the saved models, both targets
 python src/generate_predictions.py  # produces the comparison CSV, both targets
-streamlit run app.py                # test new descriptions live in the browser (shows category + merchant)
+python src/run_app              # test new descriptions live in the browser (shows category + merchant)
 ```
 Run in this order -- each script depends on the output of the one before it.
 
-## One split, two targets -- why this matters
+## One split, two targets why this matters
 `train.py` splits the data ONCE (80/20, stratified on `category`, which
 is perfectly balanced at 60 rows/class). Both the category model and the
 merchant model for a given algorithm are then fit on that exact same
@@ -105,7 +105,7 @@ end up test-only, meaning the model never had a chance to learn them.
 That's a real, honestly reported limitation -- see the "hardest
 merchants" section of `reports/model_comparison.md` -- not a hidden flaw.
 
-## `predictions_comparison.csv` -- how it's actually built (read this)
+## `predictions_comparison.csv` how it's actually built (read this)
 This is built starting from the REAL unlabeled file
 (`transactions_fr_balanced - Copie.csv`) -- not the labeled one directly.
 BUT: that file and `transactions_fr_balanced.csv` contain the exact same

@@ -1,293 +1,294 @@
 Class,Support (test),Precision,Recall,F1
-Dab Bnp Paribas,0,0.0,0.0,0.0
-Kiabi,0,0.0,0.0,0.0
-Canva,0,0.0,0.0,0.0
-Carrefour,0,0.0,0.0,0.0
-Carrefour Market,0,0.0,0.0,0.0
-Hyper U,0,0.0,0.0,0.0
-Casino,0,0.0,0.0,0.0
-Ulys Telepeage,0,0.0,0.0,0.0
-Castorama,0,0.0,0.0,0.0
-Dab Credit Mutuel,0,0.0,0.0,0.0
-Dab Hsbc,0,0.0,0.0,0.0
-Vinci Autoroutes,0,0.0,0.0,0.0
-Ikea,2,0.0,0.0,0.0
-Cinema Gaumont,0,0.0,0.0,0.0
-Xbox,0,0.0,0.0,0.0
-H&M,1,0.0,0.0,0.0
-Zara,0,0.0,0.0,0.0
-Dab Societe Generale,0,0.0,0.0,0.0
+Action,0,0.0,0.0,0.0
+,0,0.0,0.0,0.0
 Adobe,0,0.0,0.0,0.0
-Izi By Edf,0,0.0,0.0,0.0
-G7 Taxi,0,0.0,0.0,0.0
-Intermarche,0,0.0,0.0,0.0
-Aldi,3,0.0,0.0,0.0
-Jules,0,0.0,0.0,0.0
-Go Sport,0,0.0,0.0,0.0
-Allianz,0,0.0,0.0,0.0
-Commission Intervention,0,0.0,0.0,0.0
-Direct Assurance,0,0.0,0.0,0.0
-Five Guys,0,0.0,0.0,0.0
-Cora,2,0.0,0.0,0.0
-Disneyland Paris,0,0.0,0.0,0.0
-Flixbus,0,0.0,0.0,0.0
-Courtepaille,0,0.0,0.0,0.0
+Axa,0,0.0,0.0,0.0
 Bouygues Telecom,0,0.0,0.0,0.0
-Dominos Pizza,0,0.0,0.0,0.0
-Dab Banque Populaire,0,0.0,0.0,0.0
-Google One,0,0.0,0.0,0.0
-E.Leclerc,0,0.0,0.0,0.0
-Brioche Doree,0,0.0,0.0,0.0
-Buffalo Grill,1,0.0,0.0,0.0
-Burger King,0,0.0,0.0,0.0
-But,2,0.0,0.0,0.0
-Caf,0,0.0,0.0,0.0
-Cafe De La Gare,0,0.0,0.0,0.0
-Camaieu,0,0.0,0.0,0.0
-La Croissanterie,0,0.0,0.0,0.0
-Le Figaro Premium,0,0.0,0.0,0.0
-Le Monde Abonnement,0,0.0,0.0,0.0
-Leboncoin,0,0.0,0.0,0.0
-Leroy Merlin,0,0.0,0.0,0.0
-Luko,0,0.0,0.0,0.0
-Maif,3,0.0,0.0,0.0
-Maison Pradier,0,0.0,0.0,0.0
-Marche U,0,0.0,0.0,0.0
-Materiel Net,0,0.0,0.0,0.0
-Matmut,0,0.0,0.0,0.0
-Mezzo Di Pasta,0,0.0,0.0,0.0
-Midas,0,0.0,0.0,0.0
-Mk2,0,0.0,0.0,0.0
-Molotov,0,0.0,0.0,0.0
-Monoprix,0,0.0,0.0,0.0
-Neoness,0,0.0,0.0,0.0
-Nocibe,0,0.0,0.0,0.0
-Nordvpn,0,0.0,0.0,0.0
-Ocs,0,0.0,0.0,0.0
-Parapharmacie,0,0.0,0.0,0.0
-Parc Asterix,0,0.0,0.0,0.0
-Parking Indigo,0,0.0,0.0,0.0
-Pathe Cinema,0,0.0,0.0,0.0
-Pharma Gdd,0,0.0,0.0,0.0
-Picard,1,0.0,0.0,0.0
-Pokawa,0,0.0,0.0,0.0
-Printemps,0,0.0,0.0,0.0
-Quick,0,0.0,0.0,0.0
-Remboursement Cpam,0,0.0,0.0,0.0
 Spar,0,0.0,0.0,0.0
+Speed Rabbit Pizza,0,0.0,0.0,0.0
+Station E.Leclerc,0,0.0,0.0,0.0
+Subway,0,0.0,0.0,0.0
 Super U,0,0.0,0.0,0.0
 Tcl Lyon,0,0.0,0.0,0.0
+Ter Sncf,0,0.0,0.0,0.0
+Totalenergies,0,0.0,0.0,0.0
+Remboursement Mutuelle,0,0.0,0.0,0.0
+Picard,0,0.0,0.0,0.0
+Pimkie,0,0.0,0.0,0.0
+Pokawa,0,0.0,0.0,0.0
+Printemps,0,0.0,0.0,0.0
+Brasserie Le Comptoir,0,0.0,0.0,0.0
+Brico Depot,0,0.0,0.0,0.0
+But,2,0.0,0.0,0.0
+Buffalo Grill,0,0.0,0.0,0.0
+Camaieu,0,0.0,0.0,0.0
+Canal+,0,0.0,0.0,0.0
+Casino,0,0.0,0.0,0.0
+Canva,0,0.0,0.0,0.0
+Carrefour,0,0.0,0.0,0.0
+Carrefour Market,2,0.0,0.0,0.0
+Parapharmacie,0,0.0,0.0,0.0
+Ovh Cloud,0,0.0,0.0,0.0
+Parking Vinci,0,0.0,0.0,0.0
+Netflix,0,0.0,0.0,0.0
+Dab Hsbc,0,0.0,0.0,0.0
+Nordvpn,0,0.0,0.0,0.0
+Castorama,0,0.0,0.0,0.0
+Cgr Cinemas,0,0.0,0.0,0.0
+Cofiroute,0,0.0,0.0,0.0
+Cinema Gaumont,0,0.0,0.0,0.0
+Coiffure Franck Provost,0,0.0,0.0,0.0
+Cora,0,0.0,0.0,0.0
+Monoprix,0,0.0,0.0,0.0
+Mgen,0,0.0,0.0,0.0
+Mma,0,0.0,0.0,0.0
+Molotov,0,0.0,0.0,0.0
+Maif,0,0.0,0.0,0.0
+Luko,0,0.0,0.0,0.0
+Marche U,0,0.0,0.0,0.0
+Materiel Net,0,0.0,0.0,0.0
+Ikea,0,0.0,0.0,0.0
+L Orange Bleue,0,0.0,0.0,0.0
+La Croissanterie,0,0.0,0.0,0.0
+La Vie Claire,0,0.0,0.0,0.0
+Le Figaro Premium,0,0.0,0.0,0.0
+Leon De Bruxelles,0,0.0,0.0,0.0
+Dab Bnp Paribas,0,0.0,0.0,0.0
+Dab Credit Mutuel,0,0.0,0.0,0.0
+Keep Cool,0,0.0,0.0,0.0
+Dab La Banque Postale,0,0.0,0.0,0.0
+Dab Societe Generale,0,0.0,0.0,0.0
+Hellofresh,0,0.0,0.0,0.0
+Franprix,0,0.0,0.0,0.0
+Ile De France Mobilites,0,0.0,0.0,0.0
+Gmf,0,0.0,0.0,0.0
+Galeries Lafayette,0,0.0,0.0,0.0
+Vinted,1,0.0,0.0,0.0
+Yves Rocher,0,0.0,0.0,0.0
+Go Sport,0,0.0,0.0,0.0
+H&M,2,0.0,0.0,0.0
+Deezer,0,0.0,0.0,0.0
+Dominos Pizza,0,0.0,0.0,0.0
+E.Leclerc,0,0.0,0.0,0.0
+Escota,0,0.0,0.0,0.0
+Flunch,0,0.0,0.0,0.0
+Fnac,0,0.0,0.0,0.0
+Foncia,0,0.0,0.0,0.0
+Frais Tenue De Compte,0,0.0,0.0,0.0
+Agip,0,0.0,0.0,0.0
+Apple Tv+,0,0.0,0.0,0.0
 Au Bureau,0,0.0,0.0,0.0
-Auchan,0,0.0,0.0,0.0
-Auto Securite,0,0.0,0.0,0.0
-Axa,0,0.0,0.0,0.0
-Big Mamma,0,0.0,0.0,0.0
-Biocoop,0,0.0,0.0,0.0
-Commission Change,6,1.0,1.0,1.0
-Commission Devise,2,1.0,1.0,1.0
-Conforama,2,1.0,1.0,1.0
-Controle Technique Dekra,3,1.0,1.0,1.0
-Cotisation Carte,4,1.0,1.0,1.0
-Courir,2,1.0,1.0,1.0
-Cultura,3,1.0,1.0,1.0
-Brasserie Le Comptoir,2,1.0,1.0,1.0
-Dab Caisse D Epargne,2,1.0,1.0,1.0
-Dab Cic,2,1.0,1.0,1.0
-Dab Credit Agricole,3,1.0,1.0,1.0
-Dab La Banque Postale,1,1.0,1.0,1.0
-Dab Lcl,4,1.0,1.0,1.0
-Darty,1,1.0,1.0,1.0
-Decathlon,3,1.0,1.0,1.0
-Deezer,2,1.0,1.0,1.0
-Deliveroo,1,1.0,1.0,1.0
-Desjardins Coiffure,2,1.0,1.0,1.0
-Disney Plus,1,1.0,1.0,1.0
-Doctipharma,1,1.0,1.0,1.0
-Dropbox,2,1.0,1.0,1.0
-Eau De Paris,3,1.0,1.0,1.0
-Effia,2,1.0,1.0,1.0
-Electricite Generale,4,1.0,1.0,1.0
-Epic Games,2,1.0,1.0,1.0
-Escota,4,1.0,1.0,1.0
-Esso,2,1.0,1.0,1.0
-Exki,1,1.0,1.0,1.0
-Feu Vert,2,1.0,1.0,1.0
-Fitness Park,2,1.0,1.0,1.0
-Flunch,2,1.0,1.0,1.0
-Fnac,3,1.0,1.0,1.0
-Fnac Spectacles,3,1.0,1.0,1.0
-Foncia,1,1.0,1.0,1.0
-Frais Opposition,1,1.0,1.0,1.0
-Frais Paiement Hors Zone Euro,2,1.0,1.0,1.0
-Frais Rejet Prlv,1,1.0,1.0,1.0
-Frais Retrait Etranger,2,1.0,1.0,1.0
-Frais Tenue De Compte,2,1.0,1.0,1.0
-Frais Virement,2,1.0,1.0,1.0
-France Travail,3,1.0,1.0,1.0
-Franprix,1,1.0,1.0,1.0
-Free Mobile,1,1.0,1.0,1.0
-Freebox,2,1.0,1.0,1.0
-Freenow,2,1.0,1.0,1.0
-Frichti,2,1.0,1.0,1.0
-Galeries Lafayette,1,1.0,1.0,1.0
-Gmf,1,1.0,1.0,1.0
-Grand Frais,1,1.0,1.0,1.0
-Grande Pharmacie,3,1.0,1.0,1.0
-Groupama,1,1.0,1.0,1.0
-Harmonie Mutuelle,3,1.0,1.0,1.0
-Heetch,1,1.0,1.0,1.0
-Hellofresh,1,1.0,1.0,1.0
-Hippopotamus,1,1.0,1.0,1.0
-Ile De France Mobilites,2,1.0,1.0,1.0
-Intermarche Station,1,1.0,1.0,1.0
-Intersport,2,1.0,1.0,1.0
-Just Eat,7,1.0,1.0,1.0
-Keep Cool,1,1.0,1.0,1.0
-Kfc,2,1.0,1.0,1.0
-King Jouet,3,1.0,1.0,1.0
-Kusmi Tea,2,1.0,1.0,1.0
-L Orange Bleue,4,1.0,1.0,1.0
-La Boucherie,4,1.0,1.0,1.0
-Tisseo Toulouse,1,1.0,1.0,1.0
-La Poste,2,1.0,1.0,1.0
-La Poste Mobile,1,1.0,1.0,1.0
-La Vie Claire,1,1.0,1.0,1.0
-Laser Game Evolution,2,1.0,1.0,1.0
-Ldlc,1,1.0,1.0,1.0
-Totalenergies,1,1.0,1.0,1.0
-Trainline,1,1.0,1.0,1.0
-Uber,3,1.0,1.0,1.0
-Leon De Bruxelles,1,1.0,1.0,1.0
-Uber Eats,1,1.0,1.0,1.0
-Linkedin Premium,4,1.0,1.0,1.0
-Livebox Orange,3,1.0,1.0,1.0
-Loyer Sci,2,1.0,1.0,1.0
-Ugc,1,1.0,1.0,1.0
-Maaf,2,1.0,1.0,1.0
-Macif,1,1.0,1.0,1.0
-Uniqlo,1,1.0,1.0,1.0
-Urssaf Remboursement,2,1.0,1.0,1.0
-Maisons Du Monde,1,1.0,1.0,1.0
-Malakoff Humanis,1,1.0,1.0,1.0
-Mango,3,1.0,1.0,1.0
-Marcel,1,1.0,1.0,1.0
-Veolia Eau,4,1.0,1.0,1.0
-Marionnaud,1,1.0,1.0,1.0
-Vinted,1,1.0,1.0,1.0
-Vir Recu Particulier,2,1.0,1.0,1.0
-Mcdonalds,1,1.0,1.0,1.0
-Mediapart,5,1.0,1.0,1.0
-Mes Depanneurs,1,1.0,1.0,1.0
-Zodio,1,1.0,1.0,1.0
-Mgen,2,1.0,1.0,1.0
-Micromania,4,1.0,1.0,1.0
-Microsoft 365,2,1.0,1.0,1.0
-Adidas Store,4,1.0,1.0,1.0
-Agios,2,1.0,1.0,1.0
-Mma,2,1.0,1.0,1.0
-Agip,1,1.0,1.0,1.0
-Alan,3,1.0,1.0,1.0
-Musee Du Louvre,1,1.0,1.0,1.0
-Mutuelle Generale,2,1.0,1.0,1.0
-Myprotein,1,1.0,1.0,1.0
-Naturalia,2,1.0,1.0,1.0
-Nature Et Decouvertes,2,1.0,1.0,1.0
-Aliexpress,2,1.0,1.0,1.0
-Nespresso,2,1.0,1.0,1.0
-Netflix,1,1.0,1.0,1.0
-Nexity,3,1.0,1.0,1.0
-Nike Store,1,1.0,1.0,1.0
-Nintendo Eshop,3,1.0,1.0,1.0
-Alinea,2,1.0,1.0,1.0
-Norauto,2,1.0,1.0,1.0
-Amazon,2,1.0,1.0,1.0
-Notaire Honoraires,2,1.0,1.0,1.0
-Notion,1,1.0,1.0,1.0
-Nutrimuscle,1,1.0,1.0,1.0
-O Tacos,1,1.0,1.0,1.0
-Apple Icloud,1,1.0,1.0,1.0
-Onepark,1,1.0,1.0,1.0
-Onyx Gym,2,1.0,1.0,1.0
-Orange,2,1.0,1.0,1.0
-Orpi Gestion,3,1.0,1.0,1.0
-Ouigo,2,1.0,1.0,1.0
-Ovh Cloud,5,1.0,1.0,1.0
-Pacifica,2,1.0,1.0,1.0
-Paramount+,2,1.0,1.0,1.0
-Apple Music,2,1.0,1.0,1.0
-Apple Store,3,1.0,1.0,1.0
-Apple Tv+,2,1.0,1.0,1.0
-Parking Vinci,1,1.0,1.0,1.0
+Ugc,0,0.0,0.0,0.0
+Zalando,0,0.0,0.0,0.0
+Pharmacie,2,1.0,0.5,0.6666666666666666
+Promod,2,0.6666666666666666,1.0,0.8
+Zara,1,1.0,1.0,1.0
 Youtube Premium,3,1.0,1.0,1.0
-Paul,3,1.0,1.0,1.0
-Pcloud,4,1.0,1.0,1.0
-Boulanger,3,1.0,1.0,1.0
-Pharmacie,2,1.0,1.0,1.0
-Pharmacie Du Centre,3,1.0,1.0,1.0
-Pharmacie Lafayette,1,1.0,1.0,1.0
-Photomaton,1,1.0,1.0,1.0
-Bowling Stadium,3,1.0,1.0,1.0
-Pimkie,1,1.0,1.0,1.0
-Pizza Hut,2,1.0,1.0,1.0
-Playstation,1,1.0,1.0,1.0
-Plomberie Service,3,1.0,1.0,1.0
-Bp,1,1.0,1.0,1.0
-Pressing 5 A Sec,2,1.0,1.0,1.0
-Prime,1,1.0,1.0,1.0
-Prime Video,3,1.0,1.0,1.0
-Yves Rocher,1,1.0,1.0,1.0
-Prixtel,1,1.0,1.0,1.0
-Promod,2,1.0,1.0,1.0
-Q-Park,5,1.0,1.0,1.0
-Qobuz,2,1.0,1.0,1.0
-Brico Depot,1,1.0,1.0,1.0
-Rakuten,3,1.0,1.0,1.0
-Ratp,3,1.0,1.0,1.0
-Red Box,2,1.0,1.0,1.0
-Red By Sfr,2,1.0,1.0,1.0
-Canal+,1,1.0,1.0,1.0
-Remboursement Mutuelle,3,1.0,1.0,1.0
-Saemes,3,1.0,1.0,1.0
-Salaire,1,1.0,1.0,1.0
-Samsung Store,1,1.0,1.0,1.0
-Sanef,4,1.0,1.0,1.0
-Saur,2,1.0,1.0,1.0
-Sephora,2,1.0,1.0,1.0
-Sfr,3,1.0,1.0,1.0
-Sfr Box,3,1.0,1.0,1.0
-Shell,2,1.0,1.0,1.0
-Sncf Connect,2,1.0,1.0,1.0
-Sos Depannage,4,1.0,1.0,1.0
-Sosh,2,1.0,1.0,1.0
-Carter Cash,4,1.0,1.0,1.0
-Speed Rabbit Pizza,1,1.0,1.0,1.0
-Speedy,1,1.0,1.0,1.0
-Spotify,3,1.0,1.0,1.0
-Starbucks,2,1.0,1.0,1.0
-Station E.Leclerc,1,1.0,1.0,1.0
-Steam,2,1.0,1.0,1.0
-Subway,1,1.0,1.0,1.0
-Suez Eau,3,1.0,1.0,1.0
-Cdiscount,1,1.0,1.0,1.0
-Celio,2,1.0,1.0,1.0
-Ter Sncf,1,1.0,1.0,1.0
-Action,1,1.0,1.0,1.0
-Cgr Cinemas,1,1.0,1.0,1.0
-Citya Immobilier,3,1.0,1.0,1.0
-Club Med Gym,2,1.0,1.0,1.0
-Avia,3,1.0,1.0,1.0
-Avocat Consult,2,1.0,1.0,1.0
-Cofiroute,1,1.0,1.0,1.0
-Bagelstein,2,1.0,1.0,1.0
-Basic-Fit,1,1.0,1.0,1.0
-Bbox Bouygues,2,1.0,1.0,1.0
-Bchef,2,1.0,1.0,1.0
-Coiffure Franck Provost,1,1.0,1.0,1.0
-Bio C Bon,1,1.0,1.0,1.0
-Columbus Cafe,3,1.0,1.0,1.0
-Blablacar,3,1.0,1.0,1.0
-Zalando,4,1.0,1.0,1.0
+Xbox,2,1.0,1.0,1.0
+Vir Recu Particulier,2,1.0,1.0,1.0
+Vinci Autoroutes,2,1.0,1.0,1.0
+Veolia Eau,2,1.0,1.0,1.0
+Urssaf Remboursement,1,1.0,1.0,1.0
+Uniqlo,1,1.0,1.0,1.0
+Ulys Telepeage,1,1.0,1.0,1.0
+Uber Eats,2,1.0,1.0,1.0
+Uber,2,1.0,1.0,1.0
+Trainline,2,1.0,1.0,1.0
+Auchan,1,1.0,1.0,1.0
 Aprr,3,1.0,1.0,1.0
 April Sante,1,1.0,1.0,1.0
-Ticketmaster,3,1.0,1.0,1.0
-Bolt,2,1.0,1.0,1.0
+Apple Store,3,1.0,1.0,1.0
+Apple Music,3,1.0,1.0,1.0
+Apple Icloud,5,1.0,1.0,1.0
+Amazon,4,1.0,1.0,1.0
+Allianz,2,1.0,1.0,1.0
+Alinea,2,1.0,1.0,1.0
+Aliexpress,1,1.0,1.0,1.0
+Aldi,2,1.0,1.0,1.0
+Alan,2,1.0,1.0,1.0
+Zodio,1,1.0,1.0,1.0
+France Travail,2,1.0,1.0,1.0
+Frais Virement,3,1.0,1.0,1.0
+Frais Retrait Etranger,3,1.0,1.0,1.0
+Frais Rejet Prlv,2,1.0,1.0,1.0
+Frais Paiement Hors Zone Euro,2,1.0,1.0,1.0
+Frais Opposition,2,1.0,1.0,1.0
+Fnac Spectacles,1,1.0,1.0,1.0
+Flixbus,3,1.0,1.0,1.0
+Five Guys,2,1.0,1.0,1.0
+Fitness Park,5,1.0,1.0,1.0
+Feu Vert,2,1.0,1.0,1.0
+Exki,1,1.0,1.0,1.0
+Esso,5,1.0,1.0,1.0
+Epic Games,1,1.0,1.0,1.0
+Electricite Generale,2,1.0,1.0,1.0
+Effia,2,1.0,1.0,1.0
+Eau De Paris,3,1.0,1.0,1.0
+Dropbox,4,1.0,1.0,1.0
+Doctipharma,2,1.0,1.0,1.0
+Disneyland Paris,1,1.0,1.0,1.0
+Disney Plus,2,1.0,1.0,1.0
+Direct Assurance,1,1.0,1.0,1.0
+Desjardins Coiffure,2,1.0,1.0,1.0
+Deliveroo,3,1.0,1.0,1.0
+Heetch,2,1.0,1.0,1.0
+Harmonie Mutuelle,2,1.0,1.0,1.0
+Groupama,2,1.0,1.0,1.0
+Grande Pharmacie,1,1.0,1.0,1.0
+Grand Frais,1,1.0,1.0,1.0
+Google One,2,1.0,1.0,1.0
+G7 Taxi,1,1.0,1.0,1.0
+Frichti,2,1.0,1.0,1.0
+Freenow,1,1.0,1.0,1.0
+Freebox,4,1.0,1.0,1.0
+Free Mobile,3,1.0,1.0,1.0
+Kusmi Tea,2,1.0,1.0,1.0
+King Jouet,1,1.0,1.0,1.0
+Kiabi,2,1.0,1.0,1.0
+Kfc,1,1.0,1.0,1.0
+Just Eat,5,1.0,1.0,1.0
+Jules,1,1.0,1.0,1.0
+Izi By Edf,2,1.0,1.0,1.0
+Intersport,4,1.0,1.0,1.0
+Intermarche Station,1,1.0,1.0,1.0
+Intermarche,1,1.0,1.0,1.0
+Hyper U,2,1.0,1.0,1.0
+Hippopotamus,3,1.0,1.0,1.0
+Decathlon,1,1.0,1.0,1.0
+Darty,2,1.0,1.0,1.0
+Dab Lcl,1,1.0,1.0,1.0
+Dab Credit Agricole,5,1.0,1.0,1.0
+Dab Cic,1,1.0,1.0,1.0
+Dab Caisse D Epargne,4,1.0,1.0,1.0
+Dab Banque Populaire,1,1.0,1.0,1.0
+Cultura,3,1.0,1.0,1.0
+Courtepaille,2,1.0,1.0,1.0
+Courir,2,1.0,1.0,1.0
+Cotisation Carte,2,1.0,1.0,1.0
+Loyer Sci,5,1.0,1.0,1.0
+Livebox Orange,4,1.0,1.0,1.0
+Linkedin Premium,3,1.0,1.0,1.0
+Leroy Merlin,1,1.0,1.0,1.0
+Leboncoin,1,1.0,1.0,1.0
+Le Monde Abonnement,2,1.0,1.0,1.0
+Ldlc,1,1.0,1.0,1.0
+Laser Game Evolution,4,1.0,1.0,1.0
+La Poste Mobile,2,1.0,1.0,1.0
+La Poste,3,1.0,1.0,1.0
+La Boucherie,3,1.0,1.0,1.0
+Mes Depanneurs,1,1.0,1.0,1.0
+Mediapart,4,1.0,1.0,1.0
+Mcdonalds,1,1.0,1.0,1.0
+Matmut,3,1.0,1.0,1.0
+Marionnaud,1,1.0,1.0,1.0
+Marcel,2,1.0,1.0,1.0
+Mango,1,1.0,1.0,1.0
+Malakoff Humanis,3,1.0,1.0,1.0
+Maisons Du Monde,3,1.0,1.0,1.0
+Maison Pradier,1,1.0,1.0,1.0
+Macif,1,1.0,1.0,1.0
+Maaf,2,1.0,1.0,1.0
+Nespresso,2,1.0,1.0,1.0
+Neoness,2,1.0,1.0,1.0
+Nature Et Decouvertes,3,1.0,1.0,1.0
+Naturalia,1,1.0,1.0,1.0
+Myprotein,1,1.0,1.0,1.0
+Mutuelle Generale,4,1.0,1.0,1.0
+Musee Du Louvre,2,1.0,1.0,1.0
+Mk2,3,1.0,1.0,1.0
+Midas,1,1.0,1.0,1.0
+Microsoft 365,1,1.0,1.0,1.0
+Micromania,1,1.0,1.0,1.0
+Mezzo Di Pasta,1,1.0,1.0,1.0
+Controle Technique Dekra,2,1.0,1.0,1.0
+Conforama,3,1.0,1.0,1.0
+Commission Intervention,1,1.0,1.0,1.0
+Commission Devise,2,1.0,1.0,1.0
+Commission Change,5,1.0,1.0,1.0
+Columbus Cafe,2,1.0,1.0,1.0
+Club Med Gym,1,1.0,1.0,1.0
+Citya Immobilier,2,1.0,1.0,1.0
+Celio,1,1.0,1.0,1.0
+Cdiscount,2,1.0,1.0,1.0
+Orpi Gestion,2,1.0,1.0,1.0
+Orange,2,1.0,1.0,1.0
+Onyx Gym,3,1.0,1.0,1.0
+Onepark,4,1.0,1.0,1.0
+Ocs,3,1.0,1.0,1.0
+O Tacos,1,1.0,1.0,1.0
+Nutrimuscle,2,1.0,1.0,1.0
+Notion,2,1.0,1.0,1.0
+Notaire Honoraires,2,1.0,1.0,1.0
+Norauto,1,1.0,1.0,1.0
+Nocibe,3,1.0,1.0,1.0
+Nintendo Eshop,1,1.0,1.0,1.0
+Nike Store,1,1.0,1.0,1.0
+Nexity,3,1.0,1.0,1.0
+Photomaton,3,1.0,1.0,1.0
+Pharmacie Lafayette,1,1.0,1.0,1.0
+Pharmacie Du Centre,2,1.0,1.0,1.0
+Pharma Gdd,1,1.0,1.0,1.0
+Pcloud,1,1.0,1.0,1.0
+Paul,1,1.0,1.0,1.0
+Pathe Cinema,1,1.0,1.0,1.0
+Parking Indigo,1,1.0,1.0,1.0
+Parc Asterix,1,1.0,1.0,1.0
+Paramount+,1,1.0,1.0,1.0
+Pacifica,1,1.0,1.0,1.0
+Ouigo,1,1.0,1.0,1.0
+Carter Cash,3,1.0,1.0,1.0
+Cafe De La Gare,2,1.0,1.0,1.0
+Caf,1,1.0,1.0,1.0
+Burger King,1,1.0,1.0,1.0
+Brioche Doree,1,1.0,1.0,1.0
+Bp,1,1.0,1.0,1.0
+Rakuten,4,1.0,1.0,1.0
+Quick,1,1.0,1.0,1.0
+Qobuz,3,1.0,1.0,1.0
+Q-Park,2,1.0,1.0,1.0
+Prixtel,1,1.0,1.0,1.0
+Prime Video,2,1.0,1.0,1.0
+Prime,2,1.0,1.0,1.0
+Pressing 5 A Sec,1,1.0,1.0,1.0
+Plomberie Service,4,1.0,1.0,1.0
+Playstation,3,1.0,1.0,1.0
+Pizza Hut,1,1.0,1.0,1.0
+Sos Depannage,3,1.0,1.0,1.0
+Sncf Connect,2,1.0,1.0,1.0
+Shell,2,1.0,1.0,1.0
+Sfr Box,1,1.0,1.0,1.0
+Sfr,2,1.0,1.0,1.0
+Sephora,1,1.0,1.0,1.0
+Saur,3,1.0,1.0,1.0
+Sanef,6,1.0,1.0,1.0
+Samsung Store,2,1.0,1.0,1.0
+Salaire,1,1.0,1.0,1.0
+Saemes,3,1.0,1.0,1.0
+Remboursement Cpam,3,1.0,1.0,1.0
+Red By Sfr,1,1.0,1.0,1.0
+Red Box,1,1.0,1.0,1.0
+Ratp,2,1.0,1.0,1.0
+Tisseo Toulouse,2,1.0,1.0,1.0
+Ticketmaster,2,1.0,1.0,1.0
+Suez Eau,4,1.0,1.0,1.0
+Steam,4,1.0,1.0,1.0
+Starbucks,3,1.0,1.0,1.0
+Spotify,3,1.0,1.0,1.0
+Speedy,2,1.0,1.0,1.0
+Sosh,1,1.0,1.0,1.0
+Bowling Stadium,1,1.0,1.0,1.0
+Boulanger,4,1.0,1.0,1.0
+Bolt,1,1.0,1.0,1.0
+Blablacar,3,1.0,1.0,1.0
+Biocoop,1,1.0,1.0,1.0
+Bio C Bon,1,1.0,1.0,1.0
+Big Mamma,1,1.0,1.0,1.0
+Bchef,2,1.0,1.0,1.0
+Bbox Bouygues,2,1.0,1.0,1.0
+Basic-Fit,1,1.0,1.0,1.0
+Bagelstein,2,1.0,1.0,1.0
+Avocat Consult,1,1.0,1.0,1.0
+Avia,3,1.0,1.0,1.0
+Auto Securite,1,1.0,1.0,1.0
+Agios,2,1.0,1.0,1.0
+Adidas Store,4,1.0,1.0,1.0
