@@ -1,12 +1,3 @@
-"""
-test_on_holdout.py
-------------------
-Standalone check of the SAVED models (models/*.joblib) on the held-out
-20% split, for BOTH targets (category and merchant), reproducing
-train.py's exact split so these rows are guaranteed to be ones the
-saved models never trained on.
-"""
-
 import joblib
 import pandas as pd
 from pathlib import Path
@@ -37,10 +28,6 @@ AVAILABLE_MODELS = {
 def run_test():
     df = pd.read_csv(DATA_PATH)
     df[TEXT_COL] = df[TEXT_COL].fillna("")
-
-    # EXACT same split call as train.py's load_features() -- same
-    # random_state, same test_size, same stratify column (category) ->
-    # same 20% rows for BOTH targets.
     X_train_raw, X_test_raw = train_test_split(
         df, test_size=0.2, random_state=42, stratify=df["category"]
     )

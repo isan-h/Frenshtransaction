@@ -1,12 +1,11 @@
 import sys
 from pathlib import Path
-
 import pandas as pd
 import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).parent / "src"))
-from predict import predict_transaction, list_available_models, get_categories  # noqa: E402
-from feedback import save_correction, pending_count  # noqa: E402
+from predict import predict_transaction, list_available_models, get_categories
+from feedback import save_correction, pending_count
 
 st.set_page_config(page_title="Effyis Category + Merchant Classifier", page_icon="\U0001F3F7\uFE0F")
 

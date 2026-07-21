@@ -1,15 +1,3 @@
-"""
-feedback.py
------------
-Captures human corrections when a prediction is wrong (or confirms it
-was right), so they can be reviewed and folded back into training data
-later via incorporate_feedback.py.
-
-IMPORTANT: saving a correction here does NOT retrain any model. It just
-safely logs the corrected label to a CSV. Retraining is a separate,
-deliberate step -- see incorporate_feedback.py.
-"""
-
 import csv
 from pathlib import Path
 from datetime import datetime

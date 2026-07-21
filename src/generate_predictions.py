@@ -1,12 +1,3 @@
-"""
-generate_predictions.py
-------------------------
-Produces the honest, out-of-fold prediction comparison for BOTH
-targets (category and merchant) in one file, using the real unlabeled
-copy of the dataset. See README for why cross_val_predict is required
-here instead of a simple train/predict pass.
-"""
-
 import pandas as pd
 from pathlib import Path
 from sklearn.model_selection import StratifiedKFold, KFold, cross_val_predict
@@ -35,9 +26,7 @@ def generate():
     oof_predictions = pd.DataFrame({"transaction_id": labeled["transaction_id"]})
 
     cv_by_target = {
-        # category is balanced (60/class) -> stratified 5-fold is safe
         "category": StratifiedKFold(n_splits=5, shuffle=True, random_state=42),
-        # merchant has classes with as few as 1 example -> can't stratify
         "merchant": KFold(n_splits=5, shuffle=True, random_state=42),
     }
 
@@ -56,10 +45,6 @@ def generate():
             try:
                 y_pred_encoded = cross_val_predict(pipe, labeled[TEXT_COL], y, cv=cv)
             except ValueError as exc:
-                # e.g. XGBoost requires every class 0..N-1 present in every
-                # training fold -- with 292 merchant classes (some with only
-                # 1-2 rows) that can fail on some folds. Skip this model for
-                # this target only rather than crash the whole run.
                 print(f"  SKIPPED {name} on '{target}': {exc}")
                 continue
             y_pred = label_encoder.inverse_transform(y_pred_encoded)

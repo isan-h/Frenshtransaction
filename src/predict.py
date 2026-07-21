@@ -77,8 +77,6 @@ def predict_transaction(description: str, model_key: str = "linear_svm") -> dict
         "merchant_confidence": merchant_confidence,
     }
 
-
-# Kept for anything still calling the old, category-only name.
 def predict_category(description: str, model_key: str = "linear_svm"):
     pipeline, cat_encoder, merch_encoder, cat_model, merch_model = load_artifacts(model_key)
 

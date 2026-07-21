@@ -1,12 +1,3 @@
-"""
-evaluate.py
------------
-Phase 4-5: build the comparison report for BOTH targets (category and
-merchant) trained by train.py, in one combined report -- not two
-separate write-ups -- so a reader sees how every model did on both
-tasks side by side.
-"""
-
 import pandas as pd
 from pathlib import Path
 from sklearn.metrics import (
@@ -98,10 +89,6 @@ def evaluate_all(results, y_test, encoders, skipped=None):
         lines.append(f"## {TARGET_LABELS[target]} model comparison ({n_classes} classes)\n")
         lines.append(table.round(4).to_markdown(index=False))
         lines.append("")
-
-    # Executive summary up top would be nice, but markdown doesn't support
-    # re-ordering after the fact here -- so instead we prepend it by
-    # rebuilding `lines` with the summary table inserted right after the intro.
     summary_table = pd.DataFrame(summary_rows)
     lines = lines[:2] + [
         "## Executive summary\n",
@@ -116,7 +103,6 @@ def evaluate_all(results, y_test, encoders, skipped=None):
         lines.append(f"## {TARGET_LABELS[target]} detail -- best model: {best_name}\n")
 
         if n_classes <= 40:
-            # small enough for a full confusion matrix to still be readable
             cm = confusion_matrix(y_test[target], y_pred, labels=range(n_classes))
             cm_df = pd.DataFrame(cm, index=label_encoder.classes_, columns=label_encoder.classes_)
             report = classification_report(
@@ -126,10 +112,6 @@ def evaluate_all(results, y_test, encoders, skipped=None):
             lines += ["### Confusion Matrix\n", "```", cm_df.to_string(), "```",
                       "\n### Per-Class Report\n", "```", report, "```", ""]
         else:
-            # 292 merchant classes -> a full confusion matrix/report is
-            # unreadable in a report. Show the worst- and best-performing
-            # classes instead, and save the full per-class table separately
-            # for anyone who wants to dig in (reports/merchant_per_class.csv).
             per_class = _per_class_table(y_test[target], y_pred, label_encoder)
             per_class_out = DETAIL_DIR / f"{target}_per_class.csv"
             per_class.sort_values("F1").to_csv(per_class_out, index=False)
