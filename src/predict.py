@@ -17,8 +17,6 @@ AVAILABLE_MODELS = {
 
 
 def list_available_models() -> dict:
-    """Only lists a model if BOTH its category and merchant .joblib files
-    exist -- since every model here is trained on both targets together."""
     return {
         label: fname for label, fname in AVAILABLE_MODELS.items()
         if (MODELS_DIR / f"{fname}_category.joblib").exists()
@@ -27,9 +25,6 @@ def list_available_models() -> dict:
 
 
 def get_categories() -> list:
-    """All full-category labels the model was trained on, sorted
-    alphabetically. Loaded from the saved label encoder -- not
-    hardcoded -- so this stays correct if the taxonomy changes."""
     label_encoder = joblib.load(MODELS_DIR / "label_encoder_category.joblib")
     return sorted(label_encoder.classes_.tolist())
 
@@ -50,14 +45,6 @@ def load_artifacts(model_key: str):
 
 
 def predict_transaction(description: str, model_key: str = "linear_svm") -> dict:
-    """
-    Runs ONE new description through the shared TF-IDF features, then
-    through both heads (category + merchant) of the same model family.
-
-    Returns a dict:
-        full_category, primary_category, detailed_category, category_confidence,
-        merchant, merchant_confidence
-    """
     pipeline, cat_encoder, merch_encoder, cat_model, merch_model = load_artifacts(model_key)
 
     cleaned = clean_text(description)
@@ -93,11 +80,6 @@ def predict_transaction(description: str, model_key: str = "linear_svm") -> dict
 
 # Kept for anything still calling the old, category-only name.
 def predict_category(description: str, model_key: str = "linear_svm"):
-    """
-    Returns (full_category, primary_category, detailed_category, confidence, all_probs)
-    -- category-only, backward-compatible shape. Prefer predict_transaction()
-    for new code since it returns merchant too.
-    """
     pipeline, cat_encoder, merch_encoder, cat_model, merch_model = load_artifacts(model_key)
 
     cleaned = clean_text(description)
