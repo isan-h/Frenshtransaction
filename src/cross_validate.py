@@ -1,15 +1,3 @@
-"""
-cross_validate.py
-------------------
-Phase 5b: 5-fold CV robustness check for BOTH targets, run in the same
-pass. `category` (37 classes, 60 rows each) is stratified-K-fold as
-before. `merchant` (292 classes, a handful with only 1-2 rows) CANNOT
-be stratified -- sklearn requires every class to have >= n_splits
-members -- so it uses a plain shuffled KFold instead. This is a real
-difference in evaluation rigor between the two targets and is called
-out explicitly in the printed output/table, not hidden.
-"""
-
 import warnings
 import pandas as pd
 from pathlib import Path
