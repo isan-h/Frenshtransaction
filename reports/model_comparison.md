@@ -13,15 +13,15 @@ This report covers **two models trained together in the same run**, from the sam
 
 | Model                   |   Accuracy |   Precision (macro) |   Recall (macro) |   F1 (macro) |   F1 (weighted) |   Train time (s) |   Predict time (s) |
 |:------------------------|-----------:|--------------------:|-----------------:|-------------:|----------------:|-----------------:|-------------------:|
-| Logistic Regression     |     0.9843 |              0.9848 |           0.9842 |       0.9839 |          0.9839 |           0.1866 |             0.0005 |
-| Majority Class Baseline |     0.027  |              0.0007 |           0.027  |       0.0014 |          0.0014 |           0.0028 |             0.0004 |
+| Logistic Regression     |     0.9843 |              0.9848 |           0.9842 |       0.9839 |          0.9839 |           0.1767 |             0.0004 |
+| Majority Class Baseline |     0.027  |              0.0007 |           0.027  |       0.0014 |          0.0014 |           0.0004 |             0.0004 |
 
 ## Merchant model comparison (293 classes)
 
 | Model                   |   Accuracy |   Precision (macro) |   Recall (macro) |   F1 (macro) |   F1 (weighted) |   Train time (s) |   Predict time (s) |
 |:------------------------|-----------:|--------------------:|-----------------:|-------------:|----------------:|-----------------:|-------------------:|
-| Logistic Regression     |     0.982  |              0.9665 |           0.9658 |       0.9656 |          0.9819 |           0.4586 |             0.0021 |
-| Majority Class Baseline |     0.0067 |              0      |           0.0046 |       0.0001 |          0.0001 |           0.0004 |             0      |
+| Logistic Regression     |     0.982  |              0.9665 |           0.9658 |       0.9656 |          0.9819 |           0.3709 |             0.0021 |
+| Majority Class Baseline |     0.0067 |              0      |           0.0046 |       0.0001 |          0.0001 |           0.0004 |             0.0001 |
 
 ## Category detail -- best model: Logistic Regression
 

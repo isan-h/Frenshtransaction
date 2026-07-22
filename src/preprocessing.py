@@ -3,18 +3,12 @@ import pandas as pd
 
 
 def remove_special_characters(text: str) -> str:
-    """Replace punctuation/slashes with a space (e.g. '28/02' -> '28 02'),
-    so digit-removal afterward doesn't glue neighboring words together."""
     if not isinstance(text, str):
         return ""
     return re.sub(r"[^a-zA-Z0-9\s]", " ", text)
 
 
 def remove_numbers(text: str) -> str:
-    """Strip digits -- these are transaction reference codes (e.g. the
-    '4658' in 'CB LIDL 4658 CERGY') or embedded dates (e.g. '28 02' from
-    'CARTE 28/02 ...'). Neither carries category signal; both would just
-    bloat the TF-IDF vocabulary with near-random one-off tokens."""
     if not isinstance(text, str):
         return ""
     return re.sub(r"\d+", " ", text)
@@ -27,11 +21,6 @@ def normalize_spaces(text: str) -> str:
 
 
 def clean_text(text: str) -> str:
-    """
-    Master cleaning function. Deliberately NO stopword-removal step here
-    (unlike the mock-data project) -- EDA confirmed the prefix words
-    (RETRAIT, FRAIS, VIR, PRLV, etc.) are strong category signal, not noise.
-    """
     if not isinstance(text, str):
         return ""
     text = text.lower()
@@ -47,7 +36,6 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     df["description_clean"] = df["description"].apply(clean_text)
     df["date"] = pd.to_datetime(df["date"], errors="coerce")
 
-    # currency is constant (100% "EUR") -- zero predictive value, drop it
     constant_cols = [c for c in ["currency"] if c in df.columns and df[c].nunique() == 1]
     if constant_cols:
         df = df.drop(columns=constant_cols)

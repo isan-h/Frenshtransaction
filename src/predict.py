@@ -30,7 +30,6 @@ def get_categories() -> list:
 
 
 def get_merchants() -> list:
-    """All merchant labels the model was trained on, sorted alphabetically."""
     label_encoder = joblib.load(MODELS_DIR / "label_encoder_merchant.joblib")
     return sorted(label_encoder.classes_.tolist())
 
@@ -50,7 +49,6 @@ def predict_transaction(description: str, model_key: str = "linear_svm") -> dict
     cleaned = clean_text(description)
     X = pipeline.transform([cleaned])
 
-    # --- category head ---
     cat_pred_encoded = cat_model.predict(X)[0]
     full_category = cat_encoder.inverse_transform([cat_pred_encoded])[0]
     if " / " in full_category:
@@ -61,7 +59,6 @@ def predict_transaction(description: str, model_key: str = "linear_svm") -> dict
     if hasattr(cat_model, "predict_proba"):
         category_confidence = float(cat_model.predict_proba(X)[0].max())
 
-    # --- merchant head ---
     merch_pred_encoded = merch_model.predict(X)[0]
     merchant = merch_encoder.inverse_transform([merch_pred_encoded])[0]
     merchant_confidence = None

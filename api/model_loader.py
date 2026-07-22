@@ -35,10 +35,6 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class ModelBundle:
-    """Everything a prediction needs, loaded once, held in memory.
-    A dataclass instead of 5 loose global variables -- one object to
-    pass around, one thing to check `is None`, one thing to mock in tests.
-    """
     feature_pipeline: Any
     category_encoder: Any
     merchant_encoder: Any
@@ -47,14 +43,6 @@ class ModelBundle:
 
 
 def load_models() -> ModelBundle:
-    """
-    Loads every artifact from disk ONCE. Called from main.py's startup
-    lifespan -- never called again during the life of the process.
-
-    Raises FileNotFoundError (via joblib.load) if any artifact is
-    missing -- this is intentional: we want the API to refuse to start
-    rather than start "successfully" and then fail on the first request.
-    """
     start = time.time()
     logger.info("Loading ML artifacts from disk (this happens ONCE, at startup)...")
 
