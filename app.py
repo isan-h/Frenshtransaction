@@ -1,107 +1,98 @@
-import sys
-from pathlib import Path
-import pandas as pd
+import requests
 import streamlit as st
 
-sys.path.insert(0, str(Path(__file__).parent / "src"))
-from predict import predict_transaction, list_available_models, get_categories
-from feedback import save_correction, pending_count
+API_URL = "http://127.0.0.1:8000/predict"
 
-st.set_page_config(page_title="Effyis Category + Merchant Classifier", page_icon="\U0001F3F7\uFE0F")
+st.set_page_config(
+    page_title="Transaction Classification",
+    layout="centered",
+)
 
-st.title("\U0001F3F7\uFE0F Effyis Category + Merchant Classifier")
+st.title(" Transaction Classification Client")
 st.caption(
-    "Type a transaction description (only) and compare what each model predicts -- "
-    "category AND merchant, both trained together from the same text."
+    "Client application communicating with the FastAPI prediction service."
 )
 
-available = list_available_models()
-if not available:
-    st.error("No trained models found in models/. Run `python src/evaluate.py` first.")
-    st.stop()
-
-description = st.text_input("Description", "CB ZODIO 7615 REIMS")
-feedback_model_label = st.selectbox(
-    "Model to give feedback on", list(available.keys()), index=0,
-    help="All models below get predicted either way -- this just picks which one your correction applies to.",
+description = st.text_input(
+    "Transaction description",
+    placeholder="CB LIDL 4658 CERGY",
 )
 
-if st.button("Predict with ALL models", type="primary"):
-    rows = []
-    for label, model_key in available.items():
-        result = predict_transaction(description, model_key)
-        rows.append({
-            "Model": label,
-            "Predicted category": result["full_category"],
-            "Primary": result["primary_category"],
-            "Detailed": result["detailed_category"],
-            "Category confidence": (
-                f"{result['category_confidence']*100:.1f}%"
-                if result["category_confidence"] is not None else "n/a"
-            ),
-            "Predicted merchant": result["merchant"],
-            "Merchant confidence": (
-                f"{result['merchant_confidence']*100:.1f}%"
-                if result["merchant_confidence"] is not None else "n/a"
-            ),
-        })
+if st.button("Predict", use_container_width=True):
 
-    st.session_state["last_predictions"] = rows
-    st.session_state["last_description"] = description
-    st.session_state["last_feedback_model_label"] = feedback_model_label
-    st.session_state["feedback_saved"] = False
+    if description.strip() == "":
+        st.warning("Enter a transaction description.")
+        st.stop()
 
-rows = st.session_state.get("last_predictions")
-if rows:
-    st.subheader("Predictions")
-    st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
+    try:
 
-    agree = len(set(r["Predicted category"] for r in rows)) == 1
-    if agree:
-        st.success(f"All models agree: **{rows[0]['Predicted category']}**")
-    else:
-        st.warning("Models disagree on this one -- worth a closer look.")
-
-    st.divider()
-    fb_label = st.session_state["last_feedback_model_label"]
-    fb_row = next(r for r in rows if r["Model"] == fb_label)
-    st.write(f"**Feedback on {fb_label}'s prediction:** {fb_row['Predicted category']}")
-
-    categories = get_categories()
-    default_index = (
-        categories.index(fb_row["Predicted category"])
-        if fb_row["Predicted category"] in categories
-        else 0
-    )
-    corrected = st.selectbox("Correct category", categories, index=default_index, key="corrected_category")
-
-    if st.button("Save feedback"):
-        save_correction(
-            description=st.session_state["last_description"],
-            model_used=available[fb_label],
-            predicted_category=fb_row["Predicted category"],
-            correct_category=corrected,
-        )
-        st.session_state["feedback_saved"] = True
-
-    if st.session_state.get("feedback_saved"):
-        if corrected == fb_row["Predicted category"]:
-            st.success("Logged as confirmed correct. Thanks!")
-        else:
-            st.success(f"Logged correction: '{fb_row['Predicted category']}' -> '{corrected}'.")
-
-    n_pending = pending_count()
-    if n_pending > 0:
-        st.caption(
-            f"\U0001F4DD {n_pending} correction(s) saved and waiting to be folded into training data. "
-            "Run `python src/incorporate_feedback.py` then `python src/evaluate.py` to retrain on them "
-            "(or just use run_app.py, which does this automatically when you stop the app)."
+        response = requests.post(
+            API_URL,
+            json={
+                "description": description
+            },
+            timeout=10,
         )
 
-st.divider()
-st.caption(
-    "For the full model-by-model accuracy comparison (category AND merchant) "
-    "across all 2,220 transactions, see data/processed/predictions_comparison.csv -- "
-    "built from the real unlabeled file, with honest (cross_val_predict) match rates. "
-    "For the full report see reports/model_comparison.md."
-)
+        if response.status_code != 200:
+            st.error(response.text)
+            st.stop()
+
+        result = response.json()
+
+        st.success("Prediction completed")
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+
+            st.subheader("Category")
+
+            st.metric(
+                "Primary",
+                result["primary_category"],
+            )
+
+            st.metric(
+                "Detailed",
+                result["detailed_category"],
+            )
+
+            if result["category_confidence"] is not None:
+                st.progress(result["category_confidence"])
+                st.write(
+                    f"Confidence: {result['category_confidence']:.1%}"
+                )
+
+        with col2:
+
+            st.subheader("Merchant")
+
+            st.metric(
+                "Merchant",
+                result["merchant"],
+            )
+
+            if result["merchant_confidence"] is not None:
+                st.progress(result["merchant_confidence"])
+                st.write(
+                    f"Confidence: {result['merchant_confidence']:.1%}"
+                )
+
+        st.divider()
+
+        with st.expander("Raw API Response"):
+
+            st.json(result)
+
+    except requests.exceptions.ConnectionError:
+
+        st.error(
+            "Cannot connect to the FastAPI server.\n\n"
+            "Start it first with:\n\n"
+            "uvicorn src.api:app --reload"
+        )
+
+    except Exception as e:
+
+        st.exception(e)
