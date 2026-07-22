@@ -1,20 +1,3 @@
-"""
-model_loader.py
------------------
-Loads the feature pipeline, both label encoders, and both trained
-models EXACTLY ONCE, and holds them in memory for the life of the
-process. This is the module that makes "never retrain during
-prediction" and "load model only once" actual guarantees, not just
-intentions.
-
-Design: a single ModelBundle instance, created once via load_models()
-and called from main.py's startup lifespan. Not a global singleton
-that loads on import -- explicit construction at startup means a
-failure to load surfaces immediately and loudly, before the API
-accepts a single request, rather than at some unpredictable later
-moment.
-"""
-
 import logging
 import time
 from dataclasses import dataclass
