@@ -24,10 +24,10 @@ on the exact same cleaned text, TF-IDF features, and 80/20 split
 comparable model-for-model. Full detail in `reports/model_comparison.md`;
 robustness check across 5 different splits in `reports/cross_validation_report.md`.
 
-| Target | Classes | Best model | Accuracy (holdout) | F1 macro (holdout) | F1 macro (5-fold CV) |
-|---|---|---|---|---|---|
-| Category | 37 | Linear SVM | 97.07% | 97.04% | 98.84% +/- 0.36% |
-| Merchant | 292 | Random Forest | 96.17% | 94.95% | 96.01% +/- 1.03% |
+| -Target  | Classes |   Best model  | Accuracy (holdout) | F1 macro (holdout) | F1 macro (5-fold CV) |
+|----------|---------|---------------|--------------------|--------------------|----------------------|
+| Category |   37    |  Linear SVM   | 97.07%             | 97.04%             | 98.84% +/- 0.36%     |
+| Merchant |   292   | Random Forest | 96.17%             | 94.95%             | 96.01% +/- 1.03%     |
 
 vs a majority-class baseline of 0.14% (category) / ~0% (merchant).
 
